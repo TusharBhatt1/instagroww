@@ -10,43 +10,18 @@ import {BsBookmarkFill} from "react-icons/bs"
 import { useLocalStorage } from '@/Caching/useLocalStorage';
 
 
-export default function Newsfeed() {
+export default function Newsfeed({allUsers}) {
 
   //States
-  let [allUsers, setAllUsers] = useState([]);
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] = useState(false);
   let [likes, setLikes] = useState({});
   let [saved, setSaved] =  useState({})
- 
-  
-
-  //Data Fetching
-  const fetchData = async () => {
-    try{
-    const res = await fetch('https://api.unsplash.com/photos/?client_id=XU9cZEBmAX1tTiRkymikGIQ4ny6zfOHwn_qgXHX_8aE');
-    const finalRes = await res.json();
-    setAllUsers(finalRes);
-    setLoading(false)
-    }
-    catch(err)
-    {
-      console.log(err)
-    }
-  };
-
  
   console.log(allUsers)
 
   // Useffect
 
   useEffect(() => {
-    if (allUsers.length === 0) {
-      fetchData();
-    }
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
     if (typeof window !== 'undefined') {
       const likesFromStorage = localStorage.getItem('likeCollection');
       const savedPost = localStorage.getItem('savedPost');
