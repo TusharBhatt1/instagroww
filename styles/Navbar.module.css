@@ -3,13 +3,13 @@
     /* justify-content: space-between; */
     position: fixed;
     width: 100vw;
-    background: #e04f4f;
+    background: #e7dc0cdc;
     z-index: 2;
     
 }
 .navbarContent
 { display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 90vw;
   padding: 15px;
