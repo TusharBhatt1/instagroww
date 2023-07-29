@@ -1,7 +1,7 @@
 .mainContainer
 {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     gap: 40px;
  
@@ -9,13 +9,14 @@
 }
 
 .post{
-    border:1px solid black
+    border:1px solid black;
+    width: 400px;
 }
 
 @media (max-width:500px) {
     .mainContainer
     {
-        grid-template-columns: auto;
+     
     }
     
 }

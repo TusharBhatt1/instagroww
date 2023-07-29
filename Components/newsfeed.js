@@ -4,6 +4,7 @@ import { FcLikePlaceholder } from 'react-icons/fc';
 import { FcLike } from 'react-icons/fc';
 import Link from 'next/link';
 import styles from '@/styles/Feed.module.css';
+import UserDetailsPage from '@/pages/user/[user]';
 
 export default function Newsfeed() {
 
@@ -69,13 +70,14 @@ export default function Newsfeed() {
 
         <Link style={{textDecoration:"none" , color:"black"}} href={`/user/${user.user.username}`}>
          <div style={{display:"flex" , alignItems:"center",gap:"5px"}}>
-         <img src={user.urls.html}/>
+         
          <p style={{fontWeight:"bold",}}>{user.user.name}</p>
      
          </div>
          </Link>
          
           <p style={{color:"grey", marginBottom:"10px", fontSize:"0.8rem"}}>On {(user.created_at).substr(0,10)}</p>
+          <p>{user.description}</p>
 
           {loading ? (
             <Blurhash hash={user.blur_hash} height={350} width={350} punch={1} />
@@ -83,13 +85,13 @@ export default function Newsfeed() {
             <img style={{ height: '350px', width: '350px' }} src={user.urls.small} alt={user.alt_description} />
           )}
 
-          <div>
+   
             <span style={{ cursor: 'pointer' }} onClick={() => handleLikeToggle(user.id)}>
+            <div className='flex'>
               {likes[user.id] ? <FcLike size={30} /> : <FcLikePlaceholder size={30} />}
+              {likes[user.id] ? user.likes + 1 : user.likes}
+              </div>
             </span>
-
-            <p>{likes[user.id] ? user.likes + 1 : user.likes}</p>
-          </div>
         </div>
       ))}
     </div>
