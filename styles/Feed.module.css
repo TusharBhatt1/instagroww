@@ -1,0 +1,21 @@
+.mainContainer
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    gap: 40px;
+ 
+
+}
+
+.post{
+    border:1px solid black
+}
+
+@media (max-width:500px) {
+    .mainContainer
+    {
+        grid-template-columns: auto;
+    }
+    
+}
