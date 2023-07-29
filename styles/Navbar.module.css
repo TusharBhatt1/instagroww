@@ -1,6 +1,13 @@
-.main{
+.navbar{
     display: flex;
     justify-content: space-between;
-  
-    
+    position: fixed;
 }
+.navbarContent
+{ height: 100vh;
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+background:"red",
+}
+

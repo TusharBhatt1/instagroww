@@ -4,11 +4,16 @@ import { FcLikePlaceholder } from 'react-icons/fc';
 import { FcLike } from 'react-icons/fc';
 import Link from 'next/link';
 import styles from '@/styles/Feed.module.css';
-import Img from '@/LazyLoadImage/lazyLoadImage';
+import { addPost } from '@/Redux/saveSlice'; 
+import { removePost } from '@/Redux/saveSlice'; 
+
 import {BsBookmark} from "react-icons/bs"
 import {BsBookmarkFill} from "react-icons/bs"
-import { useLocalStorage } from '@/Caching/useLocalStorage';
-
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+// import { useLocalStorage } from '@/Caching/useLocalStorage';
+// import sound from "@/public/asset/mixkit-cool-interface-click-tone-2568.wav"
+// import Img from '@/LazyLoadImage/lazyLoadImage';
 
 export default function Newsfeed({allUsers}) {
 
@@ -16,8 +21,11 @@ export default function Newsfeed({allUsers}) {
   let [loading, setLoading] = useState(false);
   let [likes, setLikes] = useState({});
   let [saved, setSaved] =  useState({})
+  let dispatch = useDispatch()
+  const savedPosts = useSelector((state) => state.data);
+
  
-  console.log(allUsers)
+  console.log(savedPosts)
 
   // Useffect
 
@@ -33,6 +41,8 @@ export default function Newsfeed({allUsers}) {
 
   //Function
   const handleLikeToggle = (id) => {
+
+    // audio.play()
     setLikes((prevLikes) => {
       const updatedLikes = { ...prevLikes, [id]: !prevLikes[id] };
       if (typeof window !== 'undefined') {
@@ -40,16 +50,26 @@ export default function Newsfeed({allUsers}) {
       }
       return updatedLikes;
     });
+    setTimeout(()=>{
+
+      if (saved[id]) {
+        dispatch(addPost(user));
+      } else {
+        dispatch(removePost(id));
+      }
+    },1000)
+  
   };
 
-  if (!allUsers.length) {
-    return <div>Loading...</div>;
-  }
+ 
 
 
-  const handleSave = (id)=>{
+  const handleSave = (id, user)=>{
     
+  saved[id] ? dispatch(addPost(user)) : dispatch(removePost)
+
     setSaved((prev) => {
+
       const newSaved = { ...prev, [id]: !prev[id] };
       if (typeof window !== 'undefined') {
         localStorage.setItem('savedPost', JSON.stringify(newSaved));
@@ -86,7 +106,7 @@ export default function Newsfeed({allUsers}) {
               {likes[user.id] ? <FcLike size={30} /> : <FcLikePlaceholder size={30} />}
               {likes[user.id] ? user.likes + 1 : user.likes}
             </span>
-              <p onClick={()=>handleSave(user.id)} style={{cursor:"pointer"}} >{saved[user.id] ? <BsBookmarkFill size={30} /> : <BsBookmark size={30}/>}</p>
+              <p onClick={()=>handleSave(user.id, user)} style={{cursor:"pointer"}} >{saved[user.id] ? <BsBookmarkFill size={30} /> : <BsBookmark size={30}/>}</p>
               
               </div>
            
