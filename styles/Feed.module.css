@@ -4,18 +4,19 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 40px;
- 
 
 }
 
 .post{
     border-bottom:1px solid black;
-    width: 400px;
-    height: 650px;
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 .postimage{
-    width: 380px;
-    height: 350px;
+    width: 350px;
+    height: 400px;
  }
 
 @media (max-width:400px) {

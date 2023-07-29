@@ -1,5 +1,5 @@
 *{
-  padding: 3px;
+  padding: 2px;
   margin: 0;
   line-height: 20px;
   
@@ -31,12 +31,9 @@ p{
 .listview
 {
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
- 
 }
-
 
 @media (max-width:400px) {
   

@@ -101,7 +101,7 @@ export default function Newsfeed() {
           {loading ? (
             <Blurhash hash={user.blur_hash} height={350} width={350} punch={1} />
           ) : (
-            <Img  cn="postimage"  src={user.urls.small} alt={user.alt_description} />
+            <img  className={styles.postimage}  src={user.urls.small} alt={user.alt_description} />
           )}
 
    

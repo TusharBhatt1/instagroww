@@ -6,7 +6,7 @@ export default function Navbar() {
 
 
   return (
-    <div className={styles.main} style={{textDecoration:"none"}}>
+    <div className={styles.main} >
         <h3><Link className='link' href={"/"}>InstaGroww</Link></h3>
         <Link className='link' href={"/creator"} >Creator</Link>
         <Link className='link' href={"/saved"}>Saved</Link>
