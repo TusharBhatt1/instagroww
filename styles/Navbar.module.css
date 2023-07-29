@@ -3,6 +3,7 @@
     /* justify-content: space-between; */
     position: fixed;
     width: 100vw;
+    background: #e04f4f;
     z-index: 2;
     
 }
