@@ -70,7 +70,7 @@ export default function Newsfeed() {
 
         <Link style={{textDecoration:"none" , color:"black"}} href={`/user/${user.user.username}`}>
          <div style={{display:"flex" , alignItems:"center",gap:"5px"}}>
-         
+         <img style={{borderRadius:"50%"}} src={user.user.profile_image.small}/>
          <p style={{fontWeight:"bold",}}>{user.user.name}</p>
      
          </div>
@@ -82,7 +82,7 @@ export default function Newsfeed() {
           {loading ? (
             <Blurhash hash={user.blur_hash} height={350} width={350} punch={1} />
           ) : (
-            <img  className={styles.image} style={{ height: '350px', width: '350px' }} src={user.urls.small} alt={user.alt_description} />
+            <img  className={styles.postimage}  src={user.urls.small} alt={user.alt_description} />
           )}
 
    
