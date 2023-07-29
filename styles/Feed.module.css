@@ -10,13 +10,16 @@
 
 .post{
     border:1px solid black;
-    width: 400px;
+    width: auto;
 }
 
 @media (max-width:500px) {
-    .mainContainer
+    .post
     {
-     
+     width: auto
     }
+    .image{
+        width: 10px;
+     }
     
 }

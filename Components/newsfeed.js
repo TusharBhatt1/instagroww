@@ -82,7 +82,7 @@ export default function Newsfeed() {
           {loading ? (
             <Blurhash hash={user.blur_hash} height={350} width={350} punch={1} />
           ) : (
-            <img style={{ height: '350px', width: '350px' }} src={user.urls.small} alt={user.alt_description} />
+            <img  className={styles.image} style={{ height: '350px', width: '350px' }} src={user.urls.small} alt={user.alt_description} />
           )}
 
    
