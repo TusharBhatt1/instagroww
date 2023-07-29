@@ -24,7 +24,8 @@
 @media (max-width:400px) {
     .post
     {
-     width: 300px
+     width: 300px;
+     padding: 4px;
     }
     .postimage
     {

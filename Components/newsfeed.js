@@ -25,7 +25,6 @@ export default function Newsfeed({allUsers}) {
   const savedPosts = useSelector((state) => state.data);
 
  
-  console.log(savedPosts)
 
   // Useffect
 
@@ -50,14 +49,8 @@ export default function Newsfeed({allUsers}) {
       }
       return updatedLikes;
     });
-    setTimeout(()=>{
+   
 
-      if (saved[id]) {
-        dispatch(addPost(user));
-      } else {
-        dispatch(removePost(id));
-      }
-    },1000)
   
   };
 
@@ -75,11 +68,18 @@ export default function Newsfeed({allUsers}) {
         localStorage.setItem('savedPost', JSON.stringify(newSaved));
       }
       return newSaved;
+
+      
     });
+    saved[id] ? dispatch(addPost(user)) 
+    : 
+    dispatch(removePost(id))
+
+     console.log(savedPosts)
   }
 
   return (
-    <div className={styles.mainContainer} style={{marginTop:"100px"}}>
+    <div className={styles.mainContainer} style={{marginTop:"100px", padding:"0px"}}>
       {allUsers.map((user) => (
         <div className={styles.post} key={user.id}>
 
