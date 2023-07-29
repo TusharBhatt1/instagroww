@@ -7,8 +7,8 @@ export default function UserDetailsPage({ userDetails }) {
   return (
     <div>
       <Navbar />
-      <div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{padding:"10px"}}>
+        <div style={{ display: 'flex', alignItems: 'center' , marginTop:"60px"}}>
           <img
             style={{ borderRadius: '50%' }}
             src={userDetails.profile_image.large}

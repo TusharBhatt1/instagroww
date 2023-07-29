@@ -31,7 +31,7 @@ console.log(gridView)
   return (
 
     <div>
-     <form className='flex-class'>
+     <form className='flex-class' style={{marginBottom:"20px"}}>
       Grid
       <input
         type='radio'
