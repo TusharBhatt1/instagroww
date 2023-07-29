@@ -1,13 +1,72 @@
 *{
-  padding: 2px;
+  padding: 3px;
   margin: 0;
   line-height: 20px;
   
 }
 
-.flex{
+.flex-class{
   display: flex;
   justify-content: center;
   align-items: center;
   gap:4px
+}
+p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.image{
+  width: 350px;
+  height: 400px;
+}
+
+.link{
+  text-decoration: none;
+  font-weight: 800;
+}
+
+
+.gridView
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.listview
+{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.post{
+  border-bottom:1px solid black;
+  width: 400px;
+}
+.postimage{
+  width: 380px;
+  height: 400px;
+}
+
+@media (max-width:400px) {
+  .post
+  {
+   width: 300px
+  }
+  .postimage
+  {
+   width: 300px;
+   height: 400px;
+  }
+  
+   
+  .image
+  {
+   width: 300px;
+   height: 400px;
+  }
+  
 }
