@@ -79,7 +79,7 @@ export default function Newsfeed({allUsers}) {
   }
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainContainer} style={{marginTop:"100px"}}>
       {allUsers.map((user) => (
         <div className={styles.post} key={user.id}>
 

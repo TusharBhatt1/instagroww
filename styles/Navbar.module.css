@@ -2,12 +2,20 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
+    width: 100%;
+    background:white;
+    padding: 0;
+    
+    
 }
 .navbarContent
-{ height: 100vh;
-display:flex;
-flex-direction:column;
-justify-content:space-around;
-background:"red",
+{ display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px;
+}
+.marginTop
+{
+margin-top: 100px;
 }
 

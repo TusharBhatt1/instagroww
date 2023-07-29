@@ -13,6 +13,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .postimage{
     width: 350px;
