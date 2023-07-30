@@ -6,19 +6,18 @@ import Link from 'next/link';
 import styles from '@/styles/Feed.module.css';
 import { addPost } from '@/Redux/saveSlice'; 
 import { removePost } from '@/Redux/saveSlice'; 
-import {BsCheck2Circle} from "react-icons/bs"
+
 import {BsBookmark} from "react-icons/bs"
 import {BsBookmarkFill} from "react-icons/bs"
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-export default function Newsfeed({allUsers, hasSeenWelcomePopup}) {
+export default function Newsfeed({allUsers}) {
 
   //States
   let [loading, setLoading] = useState(false);
   let [likes, setLikes] = useState({});
   let [saved, setSaved] =  useState({})
-  let [showWelcomePopup , setShowWelcomePopup] = useState(true)
   let dispatch = useDispatch()
   const savedPosts = useSelector((state) => state.data);
 
@@ -52,16 +51,12 @@ export default function Newsfeed({allUsers, hasSeenWelcomePopup}) {
   };
 
  
-
-
   const handleSave = (id, user)=>{
     
     setSaved((prev) => {
 
       const newSaved = { ...prev, [id]: !prev[id] };
-      // if (typeof window !== 'undefined') {
-      //   localStorage.setItem('savedPost', JSON.stringify(newSaved));
-      // }
+      
       return newSaved;
     });
 
@@ -79,36 +74,11 @@ export default function Newsfeed({allUsers, hasSeenWelcomePopup}) {
    
   }
 
-  // Popup
-  const handleWelcomePopupClose = () => {
-    setShowWelcomePopup(false);
-    localStorage.setItem('welcomePopupSeen', 'true'); // Save a flag in localStorage
-  };
 
-
-  // JSX for the welcome popup
-  const welcomePopup = hasSeenWelcomePopup ?    
-    <div className={styles.welcomePopup}>
-      <div className={styles.popupContent}>
-      <h4>Insta<span className={styles.gro}>Gro</span>
-      <span className={styles.ww}>ww   </span> by Tushar Bhatt</h4>
-       
-       <br></br>
-        <p>Server Side Rendering  <BsCheck2Circle/></p>
-        <p>Caching <BsCheck2Circle/></p>
-        <p>Redux + Redux Toolkit <BsCheck2Circle/></p>
-        <p>Dynamic Route <BsCheck2Circle/></p>
-        <p>Responsive Design <BsCheck2Circle/></p>
-        <p>Local Storage <BsCheck2Circle/></p>
-        <p>Lazy Load Image and much more <BsCheck2Circle/></p>
-        <button onClick={handleWelcomePopupClose}>OK</button>
-      </div>
-    </div>
-   : null;
 
   return (
     <div className={styles.mainContainer} style={{marginTop:"100px", padding:"0px"}}>
-      {welcomePopup}
+   
       {allUsers.map((user) => (
         <div className={styles.post} key={user.id}>
 
@@ -145,13 +115,4 @@ export default function Newsfeed({allUsers, hasSeenWelcomePopup}) {
       ))}
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  const hasSeenWelcomePopup = typeof window !== 'undefined' && localStorage.getItem('welcomePopupSeen') === 'true';
-  return {
-    props: {
-      hasSeenWelcomePopup
-    }
-  };
 }

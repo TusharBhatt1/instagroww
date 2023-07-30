@@ -1,36 +1,32 @@
-import React from 'react';
-import Navbar from '@/Components/navbar';
-import Newsfeed from '@/Components/newsfeed';
+import React from 'react'
+import styles from "@/styles/Feed.module.css"
+import {BsCheck2Circle} from "react-icons/bs"
+import Link from 'next/link'
 
+export default function index() {
 
-
-export default function Index({ allUsers }) {
 
 
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-      <Navbar />
-      <Newsfeed   allUsers={allUsers} />
+  
+    <div className={styles.welcomePopup}>
+      <div className={styles.popupContent}>
+      <h4>Insta<span className={styles.gro}>Gro</span>
+      <span className={styles.ww}>ww   </span> by Tushar Bhatt</h4>
+       
+       <br></br>
+        <p>Server Side Rendering  <BsCheck2Circle/></p>
+        <p>Caching <BsCheck2Circle/></p>
+        <p>Redux + Redux Toolkit <BsCheck2Circle/></p>
+        <p>Dynamic Route <BsCheck2Circle/></p>
+        <p>Responsive Design <BsCheck2Circle/></p>
+        <p>Local Storage <BsCheck2Circle/></p>
+        <p>Lazy Load Image and much more <BsCheck2Circle/></p>
+        <Link href={"/home"}><button>OK</button></Link>
+      </div>
     </div>
-  );
-}
-
-export async function getServerSideProps({ req, res }) {
-  try {
-    const apiRes = await fetch('https://api.unsplash.com/photos/?client_id=XU9cZEBmAX1tTiRkymikGIQ4ny6zfOHwn_qgXHX_8aE', {
-      headers: {
-        'Cache-Control': 'public, max-age=300',
-      },
-    });
-    const allUsers = await apiRes.json();
-    return {
-      props: { allUsers },
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      props: { allUsers: [] }, // Return an empty array if there was an error
-    };
-  }
+   
+    
+  )
 }
