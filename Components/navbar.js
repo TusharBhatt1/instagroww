@@ -14,7 +14,6 @@ console.log(savedPostcount)
         <h3><Link className='link' href={"/"}>InstaGroww</Link></h3>
         <Link className='link' href={"/creator"} >Creator</Link>
         <Link className='link' href={"/saved"}>{savedPostcount === 0 ? "Saved" : `Saved (${savedPostcount})`}</Link>
-        <button>Logout</button>
         </div> 
     </div>
   )
