@@ -91,8 +91,8 @@ export default function Newsfeed({allUsers}) {
       <span className={styles.ww}>ww   </span> by Tushar Bhatt</h4>
        
        <br></br>
-        <p>SSR  <BsCheck2Circle/></p>
-        <p> Caching <BsCheck2Circle/></p>
+        <p>Server Side Rendering  <BsCheck2Circle/></p>
+        <p>Caching <BsCheck2Circle/></p>
         <p>Redux + Redux Toolkit <BsCheck2Circle/></p>
         <p>Responsive Design <BsCheck2Circle/></p>
         <p>Dynamic Route <BsCheck2Circle/></p>
