@@ -23,6 +23,7 @@ export default function index() {
         <p>Responsive Design <BsCheck2Circle/></p>
         <p>Local Storage <BsCheck2Circle/></p>
         <p>Lazy Load Image and much more <BsCheck2Circle/></p>
+        <br></br>
         <Link href={"/home"}><button>Proceed</button></Link>
       </div>
     </div>
