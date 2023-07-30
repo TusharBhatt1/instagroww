@@ -102,8 +102,9 @@ export default function Newsfeed({allUsers}) {
         <p>Server Side Rendering  <BsCheck2Circle/></p>
         <p>Caching <BsCheck2Circle/></p>
         <p>Redux + Redux Toolkit <BsCheck2Circle/></p>
-        <p>Responsive Design <BsCheck2Circle/></p>
         <p>Dynamic Route <BsCheck2Circle/></p>
+        <p>Responsive Design <BsCheck2Circle/></p>
+        <p>Local Storage <BsCheck2Circle/></p>
         <p>Lazy Load Image and much more <BsCheck2Circle/></p>
         <button onClick={handleWelcomePopupClose}>OK</button>
       </div>
