@@ -79,12 +79,20 @@ export default function Newsfeed({allUsers}) {
    
   }
 
+  // Popup
   const handleWelcomePopupClose = () => {
     setShowWelcomePopup(false);
+    localStorage.setItem('welcomePopupSeen', 'true'); // Save a flag in localStorage
   };
 
+  // Check if the welcome popup has been seen before using useEffect
+  useEffect(() => {
+    const hasSeenWelcomePopup = localStorage.getItem('welcomePopupSeen') === 'true';
+    setShowWelcomePopup(!hasSeenWelcomePopup);
+  }, []);
+
   // JSX for the welcome popup
-  const welcomePopup = showWelcomePopup ? (
+  const welcomePopup = showWelcomePopup ?    
     <div className={styles.welcomePopup}>
       <div className={styles.popupContent}>
       <h4>Insta<span className={styles.gro}>Gro</span>
@@ -100,7 +108,7 @@ export default function Newsfeed({allUsers}) {
         <button onClick={handleWelcomePopupClose}>OK</button>
       </div>
     </div>
-  ) : null;
+   : null;
 
   return (
     <div className={styles.mainContainer} style={{marginTop:"100px", padding:"0px"}}>
