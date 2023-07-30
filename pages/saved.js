@@ -13,12 +13,11 @@ export default function Saved() {
 
 
   return (
-    <div style={{padding:"80px"}}> {/* Adjust the zIndex value as needed */}
-
+    <div style={{padding:"70px"}}> 
     {savedPost.length ===0
      ?
     
-     <p className='flex-class' style={{height:"100vh",fontSize:"20px"}}>No Saved</p>
+     <p className='flex-class' style={{height:"50vh",fontSize:"20px"}}>No Saved</p>
     :
     <div>
       {
