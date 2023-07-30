@@ -3,7 +3,7 @@
     /* justify-content: space-between; */
     position: fixed;
     width: 100vw;
-    background: #e7dc0cdc;
+    background:white;
     z-index: 2;
     
 }
@@ -12,6 +12,7 @@
   justify-content: space-between;
   align-items: center;
   width: 90vw;
+  z-index: 20;
   padding: 15px;
 }
 .marginTop

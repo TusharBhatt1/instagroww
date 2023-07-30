@@ -59,8 +59,6 @@ export default function Newsfeed({allUsers}) {
 
   const handleSave = (id, user)=>{
     
-  saved[id] ? dispatch(addPost(user)) : dispatch(removePost)
-
     setSaved((prev) => {
 
       const newSaved = { ...prev, [id]: !prev[id] };
@@ -68,14 +66,21 @@ export default function Newsfeed({allUsers}) {
         localStorage.setItem('savedPost', JSON.stringify(newSaved));
       }
       return newSaved;
-
-      
     });
-    saved[id] ? dispatch(addPost(user)) 
-    : 
-    dispatch(removePost(id))
 
-     console.log(savedPosts)
+    // Redux
+   
+    const isSaved = savedPosts.some((post) => post.id === id);
+
+    // Dispatch the action to update the Redux state
+    if (isSaved) {
+      dispatch(removePost(id));
+    } else {
+      dispatch(addPost(user));
+    }
+   
+    console.log(savedPosts)
+   
   }
 
   return (
