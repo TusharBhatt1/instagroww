@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '@/Components/navbar';
 import Newsfeed from '@/Components/newsfeed';
-import styles from "@/styles/Navbar.module.css"
-import { useSelector } from 'react-redux';
+
 
 
 export default function Index({ allUsers }) {

@@ -44,7 +44,7 @@ export async function getServerSideProps(context) {
     const res = await fetch(
       `https://api.unsplash.com/users/${user}/?client_id=XU9cZEBmAX1tTiRkymikGIQ4ny6zfOHwn_qgXHX_8aE`,{
         headers: {
-          'Cache-Control': 'no-cache, no-store, max-age=60, must-revalidate',
+          'Cache-Control': 'public, max-age=300',
         },
       }
     );
