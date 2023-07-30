@@ -1,11 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-
+import myself from "@/public/asset/my.webp"
 export default function creator() {
 
-    const data = useSelector(state=>state.data)
-    console.log("Data :", data)
   return (
-    <div>c</div>
+    <div>
+      <img src={myself}height={"100px"} />
+    </div>
   )
 }

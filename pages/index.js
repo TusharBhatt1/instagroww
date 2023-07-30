@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import Navbar from '@/Components/navbar';
 import Newsfeed from '@/Components/newsfeed';
 import styles from "@/styles/Navbar.module.css"
+import { useSelector } from 'react-redux';
+
+
 export default function Index({ allUsers }) {
+
+
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <Navbar />

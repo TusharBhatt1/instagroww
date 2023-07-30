@@ -10,20 +10,32 @@ export default function Saved() {
 
   let dispatch= useDispatch()
    
+
+
   return (
+    <div style={{padding:"80px"}}> {/* Adjust the zIndex value as needed */}
+
+    {savedPost.length ===0
+     ?
+    
+     <p className='flex-class' style={{height:"100vh",fontSize:"20px"}}>No Saved</p>
+    :
     <div>
       {
         savedPost.map(post=>(
-          <div style={{display:"flex", justifyContent:"space-between"}}>
+          <div style={{display:"flex", justifyContent:"space-between",alignItems:"center"}}>
 
-          <Link href={`/user/${post.user.username}`}>
+          <Link className='link' href={`/user/${post.user.username}`}>
            <p>{post.user.name}</p> 
            <img style={{height:"70px", width:"70px"}} src={post.urls.small}/>
            </Link>
-           <button onClick={()=>dispatch(removePost(post.id))}>Remove</button>
+           <button className='removeBtn' onClick={()=>dispatch(removePost(post.id))}>Remove</button>
           </div>
         ))
       }
+    </div>
+    }
+    
     </div>
   )
 }

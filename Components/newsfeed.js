@@ -62,14 +62,13 @@ export default function Newsfeed({allUsers}) {
     setSaved((prev) => {
 
       const newSaved = { ...prev, [id]: !prev[id] };
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('savedPost', JSON.stringify(newSaved));
-      }
+      // if (typeof window !== 'undefined') {
+      //   localStorage.setItem('savedPost', JSON.stringify(newSaved));
+      // }
       return newSaved;
     });
 
     // Redux
-   
     const isSaved = savedPosts.some((post) => post.id === id);
 
     // Dispatch the action to update the Redux state
@@ -96,17 +95,19 @@ export default function Newsfeed({allUsers}) {
          </div>
          </Link>
         
-         { user.description ? <span style={{marginTop:"0"}}>{user.description}</span> : <span>It is only when they go wrong that machines remind you how powerful they are.</span> }
-
-          {loading ? (
+         {loading ? (
             <Blurhash hash={user.blur_hash} height={350} width={350} punch={1} />
           ) : (
             <img  className={styles.postimage}  src={user.urls.small} alt={user.alt_description} />
           )}
 
+         { user.description ? <span style={{marginTop:"0"}}>{user.description}</span> : <span>It is only when they go wrong that machines remind you how powerful they are.</span> }
+
+         
+
    
             
-            <div style={{display:"flex", justifyContent:"space-between", alignItems:'center'}}>
+            <div style={{display:"flex",gap:"100px", justifyContent:"space-between", alignItems:'center'}}>
             <span style={{ cursor: 'pointer' }} onClick={() => handleLikeToggle(user.id)}>
               {likes[user.id] ? <FcLike size={30} /> : <FcLikePlaceholder size={30} />}
               {likes[user.id] ? user.likes + 1 : user.likes}

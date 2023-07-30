@@ -19,8 +19,9 @@ p{
 }
 
 .image{
-  width: 380px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
+ 
 }
 
 
@@ -29,12 +30,18 @@ p{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 .listview
 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.link{
+  color: black;
+  font-weight: 700;
 }
 
 @media (max-width:400px) {
@@ -46,4 +53,15 @@ p{
   }
   
   
+}
+
+.removeBtn
+{
+  height: 50%;
+  background: #000;
+  border: none;
+  padding: 4px;
+  border-radius: 10px;
+  color: white;
+
 }
