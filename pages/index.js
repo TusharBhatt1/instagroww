@@ -21,7 +21,7 @@ export async function getServerSideProps({ req, res }) {
   try {
     const apiRes = await fetch('https://api.unsplash.com/photos/?client_id=XU9cZEBmAX1tTiRkymikGIQ4ny6zfOHwn_qgXHX_8aE', {
       headers: {
-        'Cache-Control': 'no-cache, no-store, max-age=60, must-revalidate',
+        'Cache-Control': 'no-cache, no-store, max-age=60',
       },
     });
     const allUsers = await apiRes.json();

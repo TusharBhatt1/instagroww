@@ -22,6 +22,50 @@
     height: 300px;
  }
 
+ /* welcomePopup.module.css */
+
+.welcomePopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .gro{
+    color: blue;
+    }
+    .ww{
+    color: rgb(35, 235, 168);
+    font-weight: 900;
+    }
+    
+  .popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(15, 224, 175, 0.785);
+  }
+  
+  .popupContent h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .popupContent button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
+  
+
 @media (max-width:400px) {
     .post
     {

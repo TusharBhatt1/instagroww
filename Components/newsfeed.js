@@ -6,7 +6,7 @@ import Link from 'next/link';
 import styles from '@/styles/Feed.module.css';
 import { addPost } from '@/Redux/saveSlice'; 
 import { removePost } from '@/Redux/saveSlice'; 
-
+import {BsCheck2Circle} from "react-icons/bs"
 import {BsBookmark} from "react-icons/bs"
 import {BsBookmarkFill} from "react-icons/bs"
 import { useDispatch } from 'react-redux';
@@ -21,6 +21,7 @@ export default function Newsfeed({allUsers}) {
   let [loading, setLoading] = useState(false);
   let [likes, setLikes] = useState({});
   let [saved, setSaved] =  useState({})
+  let [showWelcomePopup , setShowWelcomePopup] = useState(true)
   let dispatch = useDispatch()
   const savedPosts = useSelector((state) => state.data);
 
@@ -41,7 +42,6 @@ export default function Newsfeed({allUsers}) {
   //Function
   const handleLikeToggle = (id) => {
 
-    // audio.play()
     setLikes((prevLikes) => {
       const updatedLikes = { ...prevLikes, [id]: !prevLikes[id] };
       if (typeof window !== 'undefined') {
@@ -82,8 +82,31 @@ export default function Newsfeed({allUsers}) {
    
   }
 
+  const handleWelcomePopupClose = () => {
+    setShowWelcomePopup(false);
+  };
+
+  // JSX for the welcome popup
+  const welcomePopup = showWelcomePopup ? (
+    <div className={styles.welcomePopup}>
+      <div className={styles.popupContent}>
+      <h4>Insta<span className={styles.gro}>Gro</span>
+      <span className={styles.ww}>ww   </span> by Tushar Bhatt</h4>
+       
+       <br></br>
+        <p>SSR  <BsCheck2Circle/></p>
+        <p> Caching <BsCheck2Circle/></p>
+        <p>Redux + Redux Toolkit <BsCheck2Circle/></p>
+        <p>Responsive Design <BsCheck2Circle/></p>
+        <p>Dynamic Route and much more <BsCheck2Circle/></p>
+        <button onClick={handleWelcomePopupClose}>OK</button>
+      </div>
+    </div>
+  ) : null;
+
   return (
     <div className={styles.mainContainer} style={{marginTop:"100px", padding:"0px"}}>
+      {welcomePopup}
       {allUsers.map((user) => (
         <div className={styles.post} key={user.id}>
 
