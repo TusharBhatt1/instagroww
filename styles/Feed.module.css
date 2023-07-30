@@ -72,11 +72,10 @@
      width: 300px;
      padding: 4px;
     }
-    /* .postimage
-    {
-     width: 310px;
-     height: 300px;
-    } */
+    .welcomePopup {
+    
+      top: 50px;
+    }
     
     
 }
