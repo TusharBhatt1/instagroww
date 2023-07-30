@@ -12,7 +12,7 @@ import {BsBookmarkFill} from "react-icons/bs"
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-export default function Newsfeed({allUsers}) {
+export default function Newsfeed({allUsers, hasSeenWelcomePopup}) {
 
   //States
   let [loading, setLoading] = useState(false);
@@ -85,14 +85,9 @@ export default function Newsfeed({allUsers}) {
     localStorage.setItem('welcomePopupSeen', 'true'); // Save a flag in localStorage
   };
 
-  // Check if the welcome popup has been seen before using useEffect
-  useEffect(() => {
-    const hasSeenWelcomePopup = localStorage.getItem('welcomePopupSeen') === 'true';
-    setShowWelcomePopup(!hasSeenWelcomePopup);
-  }, []);
 
   // JSX for the welcome popup
-  const welcomePopup = showWelcomePopup ?    
+  const welcomePopup = hasSeenWelcomePopup ?    
     <div className={styles.welcomePopup}>
       <div className={styles.popupContent}>
       <h4>Insta<span className={styles.gro}>Gro</span>
@@ -150,4 +145,13 @@ export default function Newsfeed({allUsers}) {
       ))}
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const hasSeenWelcomePopup = typeof window !== 'undefined' && localStorage.getItem('welcomePopupSeen') === 'true';
+  return {
+    props: {
+      hasSeenWelcomePopup
+    }
+  };
 }

@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     gap:10px;
-    box-shadow: 2px 2px rgb(186, 244, 241);
+    box-shadow:1px 1px rgba(32, 32, 222, 0.932)
 }
 .postimage{
     width: 300px;
