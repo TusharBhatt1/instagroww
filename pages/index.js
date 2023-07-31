@@ -8,9 +8,14 @@ export default function index() {
 let [text, setText] = useState("Proceed")
 
 
-useEffect(()=>{
-  return setText("Proceed")
-})
+
+const handleClick=()=>{
+  setText("Proceeding")
+
+  setTimeout(()=>{
+    setText("Proceed")
+  },3000)
+}
 
   return (
   
@@ -29,7 +34,7 @@ useEffect(()=>{
         <p>Local Storage <BsCheck2Circle/></p>
         <p>Lazy Load Image and much more <BsCheck2Circle/></p>
         <br></br>
-        <Link href={"/home"}><button onClick={()=>setText("Proceeding")}>{text}</button></Link>
+        <Link href={"/home"}><button onClick={handleClick}>{text}</button></Link>
       </div>
     </div>
    

@@ -14,7 +14,7 @@ export default function UserDetailsPage({ userDetails }) {
             src={userDetails.profile_image.large}
             alt={userDetails.username}
           />
-          <span style={{ flex: '1', display: 'flex', justifyContent: 'space-around' }}>
+          <span style={{ flex: '1', display: 'flex', flexDirection:"column", gap:"10px", alignItems:"center" }}>
             <h4>Following {userDetails.following_count}</h4>
             <h4>Followers {userDetails.followers_count}</h4>
           </span>
