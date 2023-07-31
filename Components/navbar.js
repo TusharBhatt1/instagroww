@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 export default function Navbar() {
 
 let savedPostcount = useSelector(state=>state.data.length)
-console.log(savedPostcount) 
+
 
 
   return (

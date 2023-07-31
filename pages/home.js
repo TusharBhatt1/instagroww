@@ -19,6 +19,7 @@ export default function Index({ allUsers }) {
 export async function getServerSideProps({ req, res }) {
   try {
     const apiRes = await fetch('https://api.unsplash.com/photos/?client_id=XU9cZEBmAX1tTiRkymikGIQ4ny6zfOHwn_qgXHX_8aE', {
+      
       headers: {
         'Cache-Control': 'public, max-age=300',
       },
