@@ -84,7 +84,8 @@ export default function Newsfeed({allUsers}) {
 
         <Link style={{textDecoration:"none" , color:"black"}} href={`/user/${user.user.username}`}>
          <div style={{display:"flex" , alignItems:"center",gap:"5px"}}>
-         <img style={{borderRadius:"50%"}} src={user.user.profile_image.small}/>
+        {user.user.profile_image.small ? <img style={{borderRadius:"50%"}} src={user.user.profile_image.small}/>
+        :<p>Not Available</p> }
          <p style={{fontWeight:"bold",}}>{user.user.name}</p>
          <p style={{color:"grey", marginBottom:"10px", fontSize:"0.8rem"}}>On {(user.created_at).substr(0,10)}</p>
          </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/Components/navbar';
 import { CiLocationOn } from 'react-icons/ci';
 import UserPhotos from '@/Components/userPhotos';
+import Img from '@/LazyLoadImage/lazyLoadImage';
 
 export default function UserDetailsPage({ userDetails }) {
   return (
@@ -9,11 +10,12 @@ export default function UserDetailsPage({ userDetails }) {
       <Navbar />
       <div style={{padding:"10px"}}>
         <div style={{ display: 'flex', alignItems: 'center' , marginTop:"40px",padding:"20px"}}>
-          <img
+         {userDetails.profile_image.large ?
+          <Img
             style={{ borderRadius: '50%' }}
             src={userDetails.profile_image.large}
             alt={userDetails.username}
-          />
+          /> : <p>Not Available</p>}
           <span style={{ flex: '1', display: 'flex', flexDirection:"column", gap:"10px", alignItems:"center" }}>
             <h4>Following {userDetails.following_count}</h4>
             <h4>Followers {userDetails.followers_count}</h4>
