@@ -17,6 +17,9 @@
 .flex-class-user{
   width: auto;
   margin: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 p{
   margin-top: 10px;
@@ -37,7 +40,7 @@ p{
   grid-template-columns: 2fr 2fr 2fr ;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   
 }
 .listview
