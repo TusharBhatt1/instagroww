@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "@/styles/Feed.module.css"
 import {BsCheck2Circle} from "react-icons/bs"
 import Link from 'next/link'
@@ -7,6 +7,10 @@ export default function index() {
 
 let [text, setText] = useState("Proceed")
 
+
+useEffect(()=>{
+  return setText("Proceed")
+})
 
   return (
   
