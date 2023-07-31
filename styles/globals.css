@@ -16,12 +16,12 @@
 }
 .flex-class-user{
   width: auto;
-  margin: auto;
-
+  margin: auto; 
 }
 p{
   margin-top: 10px;
   margin-bottom: 10px;
+  
 }
 
 .image{
@@ -38,6 +38,7 @@ p{
   justify-content: center;
   align-items: center;
   gap: 10px;
+  
 }
 .listview
 {
@@ -61,11 +62,13 @@ p{
   .flex-class-user{
     width: 70%;
     margin: auto;
-    font-family: 8px;
+    font-family: 1px;
+    
   }
   .gridView
   {
    grid-template-columns: 2fr 2fr;
+  
   } 
 
 }
