@@ -52,7 +52,7 @@ console.log(gridView)
 
     <div className={`${gridView ? "gridView" :"listView"}`} >
         {photos && photos.map((photo)=>(
-            <div key={photo.id} className='flex-class' style={{flexDirection:"column", textAlign:"center",borderBottom:"1px solid black",padding:"4px",borderRadius:"10px"}}>
+            <div key={photo.id} className='flex-class-user' style={{flexDirection:"column", textAlign:"center",borderBottom:"1px solid black",padding:"4px",borderRadius:"10px"}}>
             <p style={{fontSize:"12px"}}>{photo.alt_description}</p>
             <Img cn="image" src={photo.urls.small}/>
             </div>

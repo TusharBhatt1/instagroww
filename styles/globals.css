@@ -14,6 +14,11 @@
   align-items: center;
   gap:4px
 }
+.flex-class-user{
+  width: auto;
+  margin: auto;
+
+}
 p{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -31,6 +36,7 @@ p{
   display: grid;
   grid-template-columns: 2fr 2fr 2fr ;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 .listview
@@ -45,13 +51,21 @@ p{
   font-weight: 700;
 }
 
-@media (max-width:400px) {
+@media (max-width:440px) {
   
   .image
   {
-   width: 300px;
-   height: 400px;
+   width: 100px;
+   height: 100px;
   }
+  .flex-class-user{
+    width: 70%;
+    margin: auto;
+  }
+  .gridView
+  {
+   grid-template-columns: 2fr 2fr;
+  } 
 
 }
 @media (max-width:680px) {
@@ -65,7 +79,7 @@ p{
   
   .gridView
   {
-   grid-template-columns: 2fr;
+   grid-template-columns: 2fr 2fr;
   } 
 }
 
