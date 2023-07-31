@@ -61,6 +61,7 @@ p{
   .flex-class-user{
     width: 70%;
     margin: auto;
+    font-family: 8px;
   }
   .gridView
   {
@@ -75,13 +76,7 @@ p{
    grid-template-columns: 2fr 2fr;
   } 
 }
-@media (max-width:500px) {
-  
-  .gridView
-  {
-   grid-template-columns: 2fr 2fr;
-  } 
-}
+
 
 .removeBtn
 {
