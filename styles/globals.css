@@ -33,6 +33,10 @@ p{
  
 }
 
+.profileImg
+{
+  border-radius: 50%;
+}
 
 .gridView
 {

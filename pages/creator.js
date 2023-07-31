@@ -1,7 +1,7 @@
 import React from 'react'
 import myself from "@/public/asset/my.webp"
 import Image from 'next/image'
-import Img from '@/LazyLoadImage/lazyLoadImage'
+
 export default function creator() {
 
   return (

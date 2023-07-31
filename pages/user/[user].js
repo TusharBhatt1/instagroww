@@ -12,7 +12,7 @@ export default function UserDetailsPage({ userDetails }) {
         <div style={{ display: 'flex', alignItems: 'center' , marginTop:"40px",padding:"20px"}}>
          {userDetails.profile_image.large ?
           <Img
-            style={{ borderRadius: '50%' }}
+            cn={"profileImg"}
             src={userDetails.profile_image.large}
             alt={userDetails.username}
           /> : <p>Not Available</p>}
