@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "@/styles/Feed.module.css"
 import {BsCheck2Circle} from "react-icons/bs"
 import Link from 'next/link'
 
 export default function index() {
 
-
+let [text, setText] = useState("Proceed")
 
 
   return (
@@ -25,7 +25,7 @@ export default function index() {
         <p>Local Storage <BsCheck2Circle/></p>
         <p>Lazy Load Image and much more <BsCheck2Circle/></p>
         <br></br>
-        <Link href={"/home"}><button>Proceed</button></Link>
+        <Link href={"/home"}><button onClick={()=>setText("Proceeding")}>{text}</button></Link>
       </div>
     </div>
    
