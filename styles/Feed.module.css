@@ -22,7 +22,7 @@
     height: 300px;
  }
 
- /* welcomePopup.module.css */
+ /* POPUP */
 
 .welcomePopup {
     position: fixed;
@@ -63,6 +63,7 @@
     color: white;
     border: none;
     border-radius: 3px;
+    padding: 4px;
   }
   
 
