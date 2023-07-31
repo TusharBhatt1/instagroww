@@ -6,7 +6,7 @@ import Link from 'next/link';
 import styles from '@/styles/Feed.module.css';
 import { addPost } from '@/Redux/saveSlice'; 
 import { removePost } from '@/Redux/saveSlice'; 
-
+import Img from '@/LazyLoadImage/lazyLoadImage';
 import {BsBookmark} from "react-icons/bs"
 import {BsBookmarkFill} from "react-icons/bs"
 import { useDispatch } from 'react-redux';
@@ -93,7 +93,7 @@ export default function Newsfeed({allUsers}) {
          {loading ? (
             <Blurhash hash={user.blur_hash} height={350} width={350} punch={1} />
           ) : (
-            <img  className={styles.postimage}  src={user.urls.small} alt={user.alt_description} />
+            <Img  cn={styles.postimage}  src={user.urls.small} alt={user.alt_description} />
           )}
 
          { user.description ? <span style={{marginTop:"0"}}>{user.description}</span> : <span>It is only when they go wrong that machines remind you how powerful they are.</span> }
