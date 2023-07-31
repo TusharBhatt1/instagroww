@@ -28,15 +28,15 @@ p{
 
 .gridView
 {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr ;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 .listview
 {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2fr ;
   justify-content: center;
 }
 
@@ -52,8 +52,21 @@ p{
    width: 300px;
    height: 400px;
   }
+
+}
+@media (max-width:680px) {
   
+  .gridView
+  {
+   grid-template-columns: 2fr 2fr;
+  } 
+}
+@media (max-width:500px) {
   
+  .gridView
+  {
+   grid-template-columns: 2fr;
+  } 
 }
 
 .removeBtn
