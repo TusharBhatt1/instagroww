@@ -60,9 +60,10 @@ p{
    height: 100px;
   }
   .flex-class-user{
-    width: 70%;
+    width: 90%;
+    height: 100%;
     margin: auto;
-    font-family: 1px;
+ 
     
   }
   .gridView
